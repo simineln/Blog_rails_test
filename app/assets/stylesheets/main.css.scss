@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: $background-color;
+    line-height: 1.6em;
+}
+
+
+footer{
+    background: $footer-color;
+    color: $secondary-color;
+    text-align: center;
+    height: 60px;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.navbar{
+    overflow: auto;
+    min-height: 75px;
+    font-size: 18px;
+    border: 0;
+    border-radius: 0;
+}
+
+.active{
+    color: $user-primary-color !important;
+}
+
+#admin .active{
+    color: $admin-primary-color !important;
+}
+
+.search-form .btn{
+    margin-left: 5px;
+}
+
+.card{
+    margin-top: 20px;
+}
+
+#sidebar{
+    margin-top: 20px;
+}
+
+.post{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px $secondary-color solid;
+    border-radius: 5px;
+    background: #fff;
+
+}
+.post img{
+    padding: 4px;
+    width: 100%;
+}
+
+.post-content{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.post h3{
+    margin: 0;
+    padding: 0;
+}
+
+small{
+    background: $secondary-color;
+    display: block;
+    border: 1px $secondary-color solid;
+    border-radius: 3px;
+    margin: 7px 0;
+    padding: 0px 15px;
+}

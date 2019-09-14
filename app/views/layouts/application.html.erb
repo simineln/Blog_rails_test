@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#"><img src="assets/blog_logo.png" width=48px alt=""> BBE | Best Blog Ever</a>
+     
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to "Home", root_path, class: "nav-link #{'active' if params[:controller] == 'posts'}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "About", about_path, class: "nav-link #{'active' if params[:controller] == 'about'}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Contact", contact_path, class: "nav-link #{'active' if params[:controller] == 'contacts'}" %>
+          </li>
+        </ul>
+
+        <%= render 'partials/search' %>
+
+      </div>
+    </nav>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+            <% if flash[:notice] %>
+              <div class="alert alert-success"><%= flash[:notice] %> </div>
+            <% end %>
+
+            <% if flash[:alert] %>
+              <div class="alert alert-danger"><%= flash[:alert] %> </div>
+            <% end %>
+
+            <%= yield %>
+          </div>
+
+          <div class="col-md-4">
+            <%= render 'partials/sidebar' %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%= render 'partials/footer' %>
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="js/bootstrap.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+  </body>
+</html>

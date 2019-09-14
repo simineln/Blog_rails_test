@@ -1,0 +1,22 @@
+<%= form_tag admin_sessions_path, :class => 'form-signin' do %>
+
+
+    <img class="mb-4" src="../assets/blog_logo_admin.png" alt="" width="72" height="72">
+
+    <h2 class="form-signin-heading">Sign in</h2>
+    <!-- Alerts & Messages -->
+    <% if flash[:notice] %>
+        <div class="alert alert-success"><%= flash[:notice] %></div>
+    <% end %>
+
+    <% if flash[:alert] %>
+        <div class="alert alert-danger"><%= flash[:notice] %></div>
+    <% end %>
+
+    <%= text_field_tag :email, params[:email], class:'form-control', placeholder: 'Email address' %>
+    <%= password_field_tag :password, '', class:'form-control', placeholder:'Password' %>
+
+    <%= submit_tag "Sign in", class: 'btn btn-dark lg btn-block' %>
+    <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+
+<% end %>
